@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta charset="utf-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <meta name="description" content=""/>
+                <meta name="author" content=""/>
+                <link rel="shortcut icon" href="../images/location32_32.ico"> </link>
+                <title>FLAUTO</title>
+
+                <!-- Bootstrap Core CSS -->
+                <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+
+                <!-- Custom CSS -->
+                <link href="../css/sb-admin.css" rel="stylesheet"/>
+
+                <!-- Custom Fonts -->
+                <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+                <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+                <script src="../js/jquery.js"></script>    <!-- Include all compiled plugins (below), or include individual files as needed -->
+                <script src="../js/bootstrap.min.js"></script>
+                <!-- Custom Fonts -->
+
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <div id="wrapper">
+
+                <!-- Navigation -->
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <img src="../images/location32_32.ico"/>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        
+                    </div>
+                    <!-- Top Menu Items -->
+                    <ul class="nav navbar-right top-nav">
+
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Admin <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#"><i class="fa fa-fw fa-user"></i> Profil</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="../login.xhtml?status=logout"><i class="fa fa-fw fa-power-off"></i> deconnexion</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+
+                    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav side-nav">
+                            <li>
+                                <a href="tabord.xhtml"><i class="fa fa-fw fa-dashboard"></i> Tableau de bord</a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:;" data-toggle="collapse" data-target="#1"><i class="glyphicon glyphicon-bed"></i> Gestion des vehicules <i class="fa fa-fw fa-caret-down"></i></a>
+                                <ul id="1" class="collapse">
+                                    <li>
+                                        <a href="welcomePrimefaces.xhtml">Liste des vehicules</a>
+                                    </li>
+                                    <li>
+                                        <a href="listevehiculeDispo.xhtml">Liste des vehicules disponibles</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript:;" data-toggle="collapse" data-target="#2"><i class="glyphicon glyphicon-user"></i> Gestion des chauffeurs <i class="fa fa-fw fa-caret-down"></i></a>
+                                <ul id="2" class="collapse">
+                                    <li>
+                                        <a href="listechauffeur.xhtml">Liste des chauffeurs</a>
+                                    </li>
+                                    <li>
+                                        <a href="listechauffeurdispo.xhtml">Liste des chauffeurs disponibles</a>
+                                    </li>
+                                    <li>
+                                        <a href="listeaffectation.xhtml">Liste des chauffeurs affectés</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript:;" data-toggle="collapse" data-target="#3"><i class="glyphicon glyphicon-shopping-cart"></i> Gestion du magasin <i class="fa fa-fw fa-caret-down"></i></a>
+                                <ul id="3" class="collapse">
+                                    <li>
+                                        <a href="listecarburant.xhtml">Liste du carburant</a>
+                                    </li>
+                                    <li>
+                                        <a href="listepiece.xhtml">Liste des pieces</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-toggle="collapse" data-target="#4"><i class="glyphicon glyphicon-wrench"></i> Gestion du garage <i class="fa fa-fw fa-caret-down"></i></a>
+                                <ul id="4" class="collapse">
+                                    <li>
+                                        <a href="listevehiculePanne.xhtml">Liste Véhicules en Panne</a>
+                                    </li>
+                                    <li>
+                                        <a href="listevehiculetraiter.xhtml">Liste véhicules réparés</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+
+                <div id="page-wrapper">
+
+                    <div class="container-fluid">
+
+                        <!-- Page Heading -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="page-header">
+                                    Demander Un Carburant
+
+                                </h1>
+                                <ol class="breadcrumb">
+                                    <li>
+                                        <i class="glyphicon glyphicon-shopping-Cart"></i>  <a href="index.html">Gestion du magasin</a>
+                                    </li>
+
+                                    <li class="active">
+                                        <i class="glyphicon glyphicon-plus-sign"></i> Demander un carburant
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+
+                        <div class="row">
+                            <br/>
+                            <div class="col-lg-12">
+
+
+
+
+                                <h:form>
+                                    <p:growl />
+                                    <h:panelGrid columns="1">
+
+                                        <h:outputLabel value="pour le :" for="dates" />
+                                        <h:outputLabel value="#{affectationMB.affectations.dateS}" for="dates" >
+                                            <f:convertDateTime pattern="dd/MM/yyyy" />
+                                        </h:outputLabel>
+                                        <h:outputLabel value="Consommation moyenne :" for="moycons1" />
+                                        <h:outputLabel value="#{affectationMB.affectations.vehicules.moyCons}" for="moycons" />
+
+                                        <h:outputLabel value="Distance:" for="distance" />
+                                        <h:inputText id="distance" styleClass="form-control input" value="#{demCarbMB.distance}" title="Distance" required="true" requiredMessage="Le champ Distance est vide !!" />
+                                        <p:message for="distance" />
+
+                                        <p:commandLink styleClass="ui-priority-primary" action="#{demCarbMB.estimer(affectationMB.affectations.vehicules.moyCons)}" ajax="false">  Calculer</p:commandLink>
+
+                                        <h:outputLabel value="#{demCarbMB.carb}"/>
+
+
+                                        <h:outputLabel value="Prix:" for="prix" />
+                                        <h:inputText id="prix" styleClass="form-control input" value="#{demCarbMB.demCarb.prix}" title="Distance" />
+                                        
+                                    </h:panelGrid>
+
+                                    <p:commandLink  styleClass="btn btn-primary" action="#{demCarbMB.addDemCarb(affectationMB.affectations)}" ajax="false"><i class="glyphicon glyphicon-plus-sign" ></i>  Save</p:commandLink>
+                                </h:form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+
+                </div>
+
+                <!-- /#page-wrapper -->
+
+            </div>
+            <!-- /#wrapper -->
+
+
+        </h:body>
+
+    </f:view>
+</html>
+

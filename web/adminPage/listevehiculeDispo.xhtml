@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta charset="utf-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <meta name="description" content=""/>
+                <meta name="author" content=""/>
+                <link rel="shortcut icon" href="../images/location32_32.ico"> </link>
+                <title>FLAUTO</title>
+
+                <!-- Bootstrap Core CSS -->
+                <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+
+                <!-- Custom CSS -->
+                <link href="../css/sb-admin.css" rel="stylesheet"/>
+
+                <!-- Custom Fonts -->
+                <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+                <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+                <script src="../js/jquery.js"></script>           
+                <!-- Include all compiled plugins (below), or include individual files as needed -->
+                <script src="../js/bootstrap.min.js"></script>
+                <!-- Custom Fonts -->
+
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <div id="wrapper">
+
+                <!-- Navigation -->
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <img src="../images/location32_32.ico"/>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        
+                    </div>
+                    <!-- Top Menu Items -->
+                    <ul class="nav navbar-right top-nav">
+
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Admin <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#"><i class="fa fa-fw fa-user"></i> Profil</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="../login.xhtml?status=logout"><i class="fa fa-fw fa-power-off"></i> deconnexion</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+
+                    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav side-nav">
+                            <li>
+                                <a href="tabord.xhtml"><i class="fa fa-fw fa-dashboard"></i> Tableau de bord</a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:;" data-toggle="collapse" data-target="#1"><i class="glyphicon glyphicon-bed"></i> Gestion des vehicules <i class="fa fa-fw fa-caret-down"></i></a>
+                                <ul id="1" class="collapse">
+                                    <li>
+                                        <a href="welcomePrimefaces.xhtml">Liste des vehicules</a>
+                                    </li>
+                                    <li>
+                                        <a href="listevehiculeDispo.xhtml">Liste des vehicules disponibles</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript:;" data-toggle="collapse" data-target="#2"><i class="glyphicon glyphicon-user"></i> Gestion des chauffeurs <i class="fa fa-fw fa-caret-down"></i></a>
+                                <ul id="2" class="collapse">
+                                    <li>
+                                        <a href="listechauffeur.xhtml">Liste des chauffeurs</a>
+                                    </li>
+                                    <li>
+                                        <a href="listechauffeurdispo.xhtml">Liste des chauffeurs disponibles</a>
+                                    </li>
+                                    <li>
+                                        <a href="listeaffectation.xhtml">Liste des chauffeurs affectés</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript:;" data-toggle="collapse" data-target="#3"><i class="glyphicon glyphicon-shopping-cart"></i> Gestion du magasin <i class="fa fa-fw fa-caret-down"></i></a>
+                                <ul id="3" class="collapse">
+                                    <li>
+                                        <a href="listecarburant.xhtml">Liste du carburant</a>
+                                    </li>
+                                    <li>
+                                        <a href="listepiece.xhtml">Liste des pieces</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-toggle="collapse" data-target="#4"><i class="glyphicon glyphicon-wrench"></i> Gestion du garage <i class="fa fa-fw fa-caret-down"></i></a>
+                                <ul id="4" class="collapse">
+                                    <li>
+                                        <a href="listevehiculePanne.xhtml">Liste Véhicules en Panne</a>
+                                    </li>
+                                    <li>
+                                        <a href="listevehiculetraiter.xhtml">Liste véhicules réparés</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+
+                <div id="page-wrapper">
+
+                    <div class="container-fluid">
+
+                        <!-- Page Heading -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="page-header">
+                                    Liste des vehicules <small>Disponibles</small>
+
+                                </h1>
+                                <ol class="breadcrumb">
+                                    <li>
+                                        <i class="glyphicon glyphicon-bed"></i>  <a href="index.html">Gestion des vehicules</a>
+                                    </li>
+                                    <li class="active">
+                                        <i class="glyphicon glyphicon-list"></i> Liste des vehicules disponibles
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+
+                        <div class="row">
+                            <br/>
+                            <div class="col-lg-12">
+                                <div class="table-responsive">
+
+                                    <f:view>
+
+
+                                        <h:form id="form">
+
+                                            <p:dataTable value="#{vehiculesMB.vehiculesDispoList}" var="item" id="vtable" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                                                         paginator="true" rows="5" style="margin-bottom:20px">
+                                                <p:column filterBy="#{item.idV}">
+                                                    <f:facet name="header">
+                                                        <h:outputText value="Id_v"/>
+                                                    </f:facet>
+                                                    <h:outputText value="#{item.idV}"/>
+                                                </p:column>
+
+                                                <p:column filterBy="#{item.marque}">
+                                                    <f:facet name="header">
+                                                        <h:outputText value="Marque"/>
+                                                    </f:facet>
+                                                    <h:outputText value="#{item.marque}"/>
+                                                </p:column>
+                                                <p:column filterBy="#{item.model}">
+                                                    <f:facet name="header">
+                                                        <h:outputText value="Model"/>
+                                                    </f:facet>
+                                                    <h:outputText value="#{item.model}"/>
+                                                </p:column>
+                                                <p:column filterBy="#{item.carros}">
+                                                    <f:facet name="header">
+                                                        <h:outputText value="Carrosserie"/>
+                                                    </f:facet>
+                                                    <h:outputText value="#{item.carros}"/>
+                                                </p:column>
+                                                <p:column filterBy="#{item.couleur}">
+                                                    <f:facet name="header">
+                                                        <h:outputText value="Couleur"/>
+                                                    </f:facet>
+                                                    <h:outputText value="#{item.couleur}"/>
+                                                </p:column>
+                                                <p:column>
+                                                    <f:facet name="header">
+                                                        <h:outputText value="Puiss_f"/>
+                                                    </f:facet>
+                                                    <h:outputText value="#{item.puissF}"/>
+                                                </p:column>
+                                                <p:column>
+                                                    <f:facet name="header">
+                                                        <h:outputText value="Puiss_d"/>
+                                                    </f:facet>
+                                                    <h:outputText value="#{item.puissD}"/>
+                                                </p:column>
+                                                <p:column>
+                                                    <f:facet name="header">
+                                                        <h:outputText value="Moy_cons"/>
+                                                    </f:facet>
+                                                    <h:outputText value="#{item.moyCons}"/>
+                                                </p:column>
+
+
+                                                <p:column style="width:40px;text-align: center;">  
+
+                                                    <f:facet name="header">Réparer</f:facet>
+                                                    <p:commandButton  process="@this" oncomplete="dlg2.show()" update=":form:display1" image="ui-icon-wrench" title="Affecter" >  
+                                                        <f:setPropertyActionListener value="#{item}" target="#{vehiculesMB.selectedVehicules}" />  
+
+                                                    </p:commandButton>  
+
+                                                </p:column> 
+
+
+                                            </p:dataTable>
+                                            <p:dialog id="dialog1" header="Réparation" widgetVar="dlg2" showEffect="bounce" hideEffect="explode" width="400" modal="true" resizable="false" >  
+                                                <center>
+                                                    <h:panelGrid id="display1" columns="2" cellpadding="4" >  
+
+                                                        <f:facet name="header">  
+                                                            <h1> Passer un véhicule au garage </h1>
+                                                        </f:facet>  
+                                                        <h:outputLabel value="Matricule:" for="idC1" />
+                                                        <h:inputText id="idC1" value="#{vehiculesMB.selectedVehicules.idV}" title="Matricle" required="true" requiredMessage="The Id_v field is required."/>
+
+
+                                                        <h:outputLabel for="dt1" value="Date entrée:" />
+                                                        <p:calendar id="dt1" value="#{maintenanceMB.maintenance.dateDbr}" />
+
+
+                                                        <p:commandButton value="Enregistrer" ajax="false" action="#{maintenanceMB.addMaintenance(vehiculesMB.selectedVehicules.idV)}" update="vtable" image="ui-icon-disk" oncomplete="dlg2.hide()" />
+                                                        <p:commandButton value="Annuler" action="#" update="vtable" oncomplete="dlg2.hide()"/>
+
+                                                    </h:panelGrid>  
+                                                </center>
+                                            </p:dialog> 
+
+
+                                        </h:form>
+
+
+                                    </f:view>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+
+                </div>
+
+                <!-- /#page-wrapper -->
+
+            </div>
+            <!-- /#wrapper -->
+
+
+        </h:body>
+
+    </f:view>
+</html>
+

@@ -1,0 +1,277 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta charset="utf-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <meta name="description" content=""/>
+                <meta name="author" content=""/>
+                <link rel="shortcut icon" href="../images/location32_32.ico"> </link>
+                <title>FLAUTO</title>
+                <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+                <script src="../js/jquery.js"></script>                <!-- Include all compiled plugins (below), or include individual files as needed -->
+                <script src="../js/bootstrap.min.js"></script>
+                <!-- Custom Fonts -->
+                <!-- Bootstrap Core CSS -->
+                <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+
+                <!-- Custom CSS -->
+                <link href="../css/sb-admin.css" rel="stylesheet"/>
+
+                <!-- Custom Fonts -->
+                <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+
+
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <div id="wrapper">
+
+                <!-- Navigation -->
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <img src="../images/location32_32.ico"/>
+                    </div>
+                    <!-- Top Menu Items -->
+                    <ul class="nav navbar-right top-nav">
+
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Admin <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#"><i class="fa fa-fw fa-user"></i> Profil</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="../login.xhtml?status=logout"><i class="fa fa-fw fa-power-off"></i> deconnexion</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+
+                    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav side-nav">
+                            <li>
+                                <a href="tabord.xhtml"><i class="fa fa-fw fa-dashboard"></i> Tableau de bord</a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:;" data-toggle="collapse" data-target="#1"><i class="glyphicon glyphicon-bed"></i> Gestion des vehicules <i class="fa fa-fw fa-caret-down"></i></a>
+                                <ul id="1" class="collapse">
+                                    <li>
+                                        <a href="welcomePrimefaces.xhtml">Liste des vehicules</a>
+                                    </li>
+                                    <li>
+                                        <a href="listevehiculeDispo.xhtml">Liste des vehicules disponibles</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript:;" data-toggle="collapse" data-target="#2"><i class="glyphicon glyphicon-user"></i> Gestion des chauffeurs <i class="fa fa-fw fa-caret-down"></i></a>
+                                <ul id="2" class="collapse">
+                                    <li>
+                                        <a href="listechauffeur.xhtml">Liste des chauffeurs</a>
+                                    </li>
+                                    <li>
+                                        <a href="listechauffeurdispo.xhtml">Liste des chauffeurs disponibles</a>
+                                    </li>
+                                    <li>
+                                        <a href="listeaffectation.xhtml">Liste des chauffeurs affectés</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript:;" data-toggle="collapse" data-target="#3"><i class="glyphicon glyphicon-shopping-cart"></i> Gestion du magasin <i class="fa fa-fw fa-caret-down"></i></a>
+                                <ul id="3" class="collapse">
+                                    <li>
+                                        <a href="listecarburant.xhtml">Liste du carburant</a>
+                                    </li>
+                                    <li>
+                                        <a href="listepiece.xhtml">Liste des pieces</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-toggle="collapse" data-target="#4"><i class="glyphicon glyphicon-wrench"></i> Gestion du garage <i class="fa fa-fw fa-caret-down"></i></a>
+                                <ul id="4" class="collapse">
+                                    <li>
+                                        <a href="listevehiculePanne.xhtml">Liste Véhicules en Panne</a>
+                                    </li>
+                                    <li>
+                                        <a href="listevehiculetraiter.xhtml">Liste véhicules réparés</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+
+                <div id="page-wrapper">
+
+                    <div class="container-fluid">
+
+                        <!-- Page Heading -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="page-header">
+                                    Ajouter <small>Un Chauffeur</small>
+
+                                </h1>
+                                <ol class="breadcrumb">
+                                    <li>
+                                        <i class="glyphicon glyphicon-user"></i>  <a href="index.html">Gestion des chauffeurs</a>
+                                    </li>
+                                    <li class="active">
+                                        <i class="glyphicon glyphicon-list"></i> Liste des chauffeurs
+                                    </li>
+                                    <li class="active">
+                                        <i class="glyphicon glyphicon-plus-sign"></i> Ajouter un chauffeur
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+
+                        <div class="row">
+                            <br/>
+                            <div class="col-lg-12">
+
+
+
+                                <h:form>
+                                    <p:growl />
+                                    <h:panelGrid columns="1" id="panel">
+
+                                        <h:outputLabel value="Nom:" for="nom" />
+                                        <h:inputText requiredMessage="Le nom du chauffeur est vide !!" id="nom" styleClass="form-control input" value="#{chauffeursMB.chauffeurs.nom}" title="Nom" required="true" />
+                                        <p:message for="nom" />
+
+
+                                        <h:outputLabel value="Prénom:" for="prenom" />
+                                        <h:inputText id="prenom" requiredMessage="Le prénom du chauffeur est vide !!" styleClass="form-control input" value="#{chauffeursMB.chauffeurs.prenom}" title="Prenom" required="true" />
+                                        <p:message for="prenom" />
+
+                                        <h:outputLabel value="Date de naissance:" for="dte" />
+
+
+
+                                        <h:panelGrid columns="6" cellpadding="4">
+
+                                            <p:selectOneMenu id="console1"  value="#{chauffeursMB.day}" style="width:125px;margin-left: 10px;" requiredMessage="Le champ jour est vide !!" required="true">
+                                                <f:selectItem itemLabel="Jour" itemValue="" />
+                                                <f:selectItem itemLabel="1" itemValue="1" />
+                                                <f:selectItem itemLabel="2" itemValue="2" />
+                                                <f:selectItem itemLabel="3" itemValue="3" />
+                                                <f:selectItem itemLabel="4" itemValue="4" />
+                                                <f:selectItem itemLabel="5" itemValue="5" />
+                                                <f:selectItem itemLabel="6" itemValue="6" />
+                                                <f:selectItem itemLabel="7" itemValue="7" />
+                                                <f:selectItem itemLabel="8" itemValue="8" />
+                                                <f:selectItem itemLabel="9" itemValue="9" />
+                                                <f:selectItem itemLabel="10" itemValue="10" />
+                                                <f:selectItem itemLabel="11" itemValue="11" />
+                                                <f:selectItem itemLabel="12" itemValue="12" />
+                                                <f:selectItem itemLabel="13" itemValue="13" />
+                                                <f:selectItem itemLabel="14" itemValue="14" />
+                                                <f:selectItem itemLabel="15" itemValue="15" />
+                                                <f:selectItem itemLabel="16" itemValue="16" />
+                                                <f:selectItem itemLabel="17" itemValue="17" />
+                                                <f:selectItem itemLabel="18" itemValue="18" />
+                                                <f:selectItem itemLabel="19" itemValue="19" />
+                                                <f:selectItem itemLabel="20" itemValue="20" />
+                                                <f:selectItem itemLabel="21" itemValue="21" />
+                                                <f:selectItem itemLabel="22" itemValue="22" />
+                                                <f:selectItem itemLabel="23" itemValue="23" />
+                                                <f:selectItem itemLabel="24" itemValue="24" />
+                                                <f:selectItem itemLabel="25" itemValue="25" />
+                                                <f:selectItem itemLabel="26" itemValue="26" />
+                                                <f:selectItem itemLabel="27" itemValue="27" />
+                                                <f:selectItem itemLabel="28" itemValue="28" />
+                                                <f:selectItem itemLabel="29" itemValue="29" />
+                                                <f:selectItem itemLabel="30" itemValue="30" />
+                                                <f:selectItem itemLabel="31" itemValue="31" />
+
+
+
+                                            </p:selectOneMenu>
+                                            <p:message for="console1" />
+                                            <p:selectOneMenu id="console2"  value="#{chauffeursMB.month}" style="width:125px;margin-left: 10px;" requiredMessage="Le champ mois est vide !!" required="true" >
+                                                <f:selectItem itemLabel="Mois" itemValue="" />
+                                                <f:selectItem itemLabel="Janvier" itemValue="1" />
+                                                <f:selectItem itemLabel="Février" itemValue="2" />
+                                                <f:selectItem itemLabel="Mars" itemValue="3" />
+                                                <f:selectItem itemLabel="Avril" itemValue="4" />
+                                                <f:selectItem itemLabel="Mai" itemValue="5" />
+                                                <f:selectItem itemLabel="Juin" itemValue="6" />
+                                                <f:selectItem itemLabel="Juillet" itemValue="7" />
+                                                <f:selectItem itemLabel="Août" itemValue="8" />
+                                                <f:selectItem itemLabel="Septembre" itemValue="9" />
+                                                <f:selectItem itemLabel="Octobre" itemValue="10" />
+                                                <f:selectItem itemLabel="Novembre" itemValue="11" />
+                                                <f:selectItem itemLabel="Décembre" itemValue="12" />
+
+                                            </p:selectOneMenu> 
+                                            <p:message for="console2" />
+                                            <h:inputText id="anne" styleClass="form-control input" value="#{chauffeursMB.year}" title="Anne" style="width:125px;margin-left: 10px;" requiredMessage="Le champ année est vide !!" required="true" />
+
+                                            <p:message for="anne" />
+                                        </h:panelGrid>
+                                        <h:outputLabel value="Téléphone:" for="tel" />
+                                        <h:inputText id="tel" styleClass="form-control input" value="#{chauffeursMB.chauffeurs.tel}" title="Telephone" requiredMessage="Le champ Téléphone est vide !!" required="true"/>
+                                        <p:message for="tel" />
+                                        <h:outputLabel value="CIN:" for="cin" />
+                                        <h:inputText id="cin" styleClass="form-control input" value="#{chauffeursMB.chauffeurs.cin}" title="CIN" requiredMessage="Le champ CIN est vide !!" required="true"/>
+                                        <p:message for="cin" />
+                                        <h:outputLabel value="Adresse:" for="adr" />
+                                        <h:inputText id="adr" styleClass="form-control input" value="#{chauffeursMB.chauffeurs.adr}" title="Adr" requiredMessage="Le champ Adresse est vide !!" required="true" />
+                                        <p:message for="adr" />
+
+                                    </h:panelGrid>
+                                    <br></br>
+                                    <p:commandLink  styleClass="btn btn-primary" action="#{chauffeursMB.addChauffeurs()}" ajax="false" update="panel"><i class="glyphicon glyphicon-plus-sign" ></i>  Ajouter</p:commandLink>
+                                </h:form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+
+                </div>
+
+                <!-- /#page-wrapper -->
+
+            </div>
+            <!-- /#wrapper -->
+
+
+        </h:body>
+
+    </f:view>
+</html>
+

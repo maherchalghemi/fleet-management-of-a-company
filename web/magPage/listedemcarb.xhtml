@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta charset="utf-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <meta name="description" content=""/>
+                <meta name="author" content=""/>
+                <link rel="shortcut icon" href="../images/location32_32.ico"> </link>
+
+                <title>FLAUTO</title>
+
+                <!-- Bootstrap Core CSS -->
+                <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+
+                <!-- Custom CSS -->
+                <link href="../css/sb-admin.css" rel="stylesheet"/>
+
+                <!-- Custom Fonts -->
+                <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+                <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+                <script src="../js/jquery.js"></script>                <!-- Include all compiled plugins (below), or include individual files as needed -->
+                <script src="../js/bootstrap.min.js"></script>
+                <!-- Custom Fonts -->
+
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <div id="wrapper">
+
+                <!-- Navigation -->
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <img src="../images/location32_32.ico"/>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                       
+                    </div>
+                    <!-- Top Menu Items -->
+                    <ul class="nav navbar-right top-nav">
+
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Magasinier <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#"><i class="fa fa-fw fa-user"></i> Profil</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="../login.xhtml?status=logout"><i class="fa fa-fw fa-power-off"></i> deconnexion</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+
+                    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav side-nav">
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa-dashboard"></i> Tableau de bord</a>
+                            </li>
+
+                           
+
+                       
+
+                            <li>
+                                <a href="javascript:;" data-toggle="collapse" data-target="#3"><i class="glyphicon glyphicon-shopping-cart"></i> Gestion du magasin <i class="fa fa-fw fa-caret-down"></i></a>
+                                <ul id="3" class="collapse">
+                                    <li>
+                                        <a href="listedemcarb.xhtml">Liste des demandes du carburant</a>
+                                    </li>
+                                    <li>
+                                        <a href="listedempiece.xhtml">Listes des demandes des pieces</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+
+                <div id="page-wrapper">
+
+                    <div class="container-fluid">
+
+                        <!-- Page Heading -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="page-header">
+                                    Listes des demandes <small>Carburant</small>
+
+                                </h1>
+                                <ol class="breadcrumb">
+                                    <li>
+                                        <i class="glyphicon glyphicon-shopping-cart"></i>  <a href="index.html">Gestion du magasin</a>
+                                    </li>
+                                    <li class="active">
+                                        <i class="glyphicon glyphicon-list"></i> Listes des demandes carburant
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+
+                        <div class="row">
+                            <br/>
+                            <div class="col-lg-12">
+                                <div class="table-responsive">
+
+                                    <f:view>
+
+
+                                        <h:form id="form">
+
+                                            <p:dataTable value="#{demCarbMB.demCarbsList}" var="item" id="vtable" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                                                         paginator="true" rows="5" style="margin-bottom:20px">
+                                                <p:column filterBy="#{item.affectations.chauffeurs.idC}">
+                                                    <f:facet name="header">
+                                                        <h:outputText value="Matricule chauffeur"/>
+                                                    </f:facet>
+                                                    <h:outputText value="#{item.affectations.chauffeurs.idC}"/>
+                                                </p:column>
+                                                <p:column filterBy="#{item.affectations.chauffeurs.nom} #{item.affectations.chauffeurs.prenom}">
+                                                    <f:facet name="header">
+                                                        <h:outputText value="Nom du chauffeur"/>
+                                                    </f:facet>
+                                                    <h:outputText value="#{item.affectations.chauffeurs.nom} #{item.affectations.chauffeurs.prenom}"/>
+                                                </p:column>
+
+                                                <p:column>
+                                                    <f:facet name="header">
+                                                        <h:outputText value="Prix"/>
+                                                    </f:facet>
+                                                    <h:outputText value="#{item.prix}"/>
+                                                </p:column>
+
+                                                <p:column>
+                                                    <f:facet name="header">
+                                                        <h:outputText value="Date"/>
+                                                    </f:facet>
+                                                    <h:outputText value="#{item.date}"/>
+                                                </p:column>
+
+                                                <p:column style="width:40px;text-align: center;"> 
+
+                                                    <f:facet name="header">Valider</f:facet>
+
+                                                    <p:commandButton image="ui-icon-check" process="@this" oncomplete="dlg.show()" update=":form:display">
+                                                        <f:setPropertyActionListener value="#{item}" target="#{demCarbMB.selectDemCarb}" />  
+
+                                                    </p:commandButton>
+                                                </p:column> 
+                                            </p:dataTable>
+
+
+                                            <p:dialog id="dialog" header="Validation" widgetVar="dlg" showEffect="bounce" hideEffect="explode" width="400" modal="true" resizable="false" >  
+                                                <center>
+                                                    <h:panelGrid id="display" columns="1" cellpadding="4" >  
+
+                                                        <f:facet name="header">  
+                                                            <h1> Valider un bon carburant </h1>
+                                                        </f:facet>  
+                                                        <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">  
+
+                                                            <h:outputText value="Choisir: " />  
+                                                            <p:selectManyCheckbox value="#{demCarbMB.selectedOptions}">  
+                                                                <f:selectItem itemLabel="50DT" itemValue="50" />  
+                                                                <f:selectItem itemLabel="20DT" itemValue="20" />  
+                                                                <f:selectItem itemLabel="10DT" itemValue="10" />  
+                                                            </p:selectManyCheckbox> 
+                                                            <h:outputLabel value="Qte 50DT:"  />
+                                                            <h:inputText  value="#{demCarbMB.qte3}" title="qte3" />
+
+                                                            <h:outputLabel value="Qte 20DT:" />
+                                                            <h:inputText  value="#{demCarbMB.qte2}" title="qte2" />
+
+                                                            <h:outputLabel value="Qte 10DT:"  />
+                                                            <h:inputText  value="#{demCarbMB.qte1}" title="qte1" />
+
+                                                        </h:panelGrid>
+                                                        <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">  
+
+                                                            <p:commandButton value="Enregistrer" action="#{demCarbMB.deleteDemCarb()}" update="vtable" image="ui-icon-disk" oncomplete="dlg.hide()" />
+                                                            <p:commandButton value="Annuler" action="#" update="vtable" oncomplete="dlg.hide()"/>
+                                                        </h:panelGrid> 
+                                                    </h:panelGrid>  
+                                                </center>
+                                            </p:dialog> 
+                                        </h:form>
+
+                                    </f:view>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+
+                </div>
+
+                <!-- /#page-wrapper -->
+
+            </div>
+            <!-- /#wrapper -->
+
+
+        </h:body>
+
+    </f:view>
+</html>
+

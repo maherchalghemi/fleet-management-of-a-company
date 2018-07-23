@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/security
+http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <http access-denied-page="/denied.xhtml" auto-config="true">
+        
+        
+        <intercept-url pattern="/adminPage/**" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/chefmagPage/**" access="ROLE_CMAGAS"/>
+        <intercept-url pattern="/magPage/**" access="ROLE_MAGAS"/>
+        <intercept-url pattern="/garagePage/**" access="ROLE_GARAG"/>
+        <form-login login-page="/login.xhtml" authentication-success-handler-ref="authenticationSuccessRedirecthandler"
+                            authentication-failure-url="/login.xhtml?status=error" />
+        <logout logout-success-url="/login.xhtml?status=logout" />
+    </http>
+
+    <authentication-manager>
+        <authentication-provider>
+            <jdbc-user-service data-source-ref="dataSource"
+                                           users-by-username-query="select login, pwd, enable from users where login = ?"
+                                           authorities-by-username-query="select u.login, ur.role from users u, role_users ur where u.id_u = ur.id_u and u.login = ? " />
+                       
+        </authentication-provider>
+    </authentication-manager>
+    
+    <beans:bean class="security.CustomAuthenticationHandler" id="authenticationSuccessRedirecthandler"></beans:bean>
+
+    <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <beans:property name="url" value="jdbc:mysql://localhost:3306/flauto" />
+        <beans:property name="username" value="root" />
+        <beans:property name="password" value="" />
+    </beans:bean>
+
+</beans:beans>

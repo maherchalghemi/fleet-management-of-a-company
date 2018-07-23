@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jstl/core">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="shortcut icon" href="images/location32_32.ico"> </link>
+    <title>FLAUTO|LOGIN</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body style="background:#2E9AFE;">
+    <div class="container">
+	<p><br/><br/><br/><br/><br/><br/></p>
+	
+		<div class="row">
+			<div class="col-md-8"> </div>
+			<div class="col-md-6 col-md-offset-3"> 
+			
+				<div class="panel panel-default">
+					<div class="panel-body">
+				<div class="col-md-8"> </div>		<div class="page-header">
+                                                    
+							<h3><img src="images/location32_32.ico"/>     Se connecter</h3>
+						</div>
+				<form method="post" action="j_spring_security_check">
+					<div class="form-group">
+						<label for="exampleInputEmail1">Login</label>
+							
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span></span>
+								<input type="text" class="form-control" name="j_username" placeholder="login"/>							
+							</div>
+					</div>
+								
+					<div class="form-group">
+						<label for="exampleInputPassword1">Mot passe</label>
+						<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-star"></span></span>
+								<input type="password" class="form-control" name="j_password" placeholder="Mot de passe" />
+							
+						</div>
+					</div>
+					<br/>
+				<button type="reset" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>  Annuler</button>
+				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-lock"></span>  Se connecter</button>
+				<p><br/></p>
+				</form>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+		
+	</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	
+	<br />
+	<c:if test="${param.status=='error'}">
+		<label style="color:red">Invalid username or password!!</label>
+	</c:if>
+	<c:if test="${param.status=='logout'}">
+		<label style="color:green">Logged out successfully!</label>
+	</c:if>
+</body>
+</html>
